@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from '../layout/Main';
-import Home from '../pages/Home/Home';
 import Blog from "../pages/Blog/Blog";
+import Home from "../pages/Home/Home/Home";
 
 const router = createBrowserRouter([
     {
@@ -10,7 +10,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />
+                element: <Home />,
+                loader: ({params}) => fetch("http://localhost:5000/chef-recipe")
             },
             {
                 path: "blog",

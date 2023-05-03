@@ -1,18 +1,19 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import banner from "../../assets/yumma-home-banner-left.png";
+import banner from "../../../assets/yumma-home-banner-left.png";
 
-const Home = () => {
+
+const BannerHome = () => {
     return (
         <div>
             <div className="bg-dark text-white py-5">
                 <Container>
                     <Row>
-                        <Col>
+                        <Col sm={1} md={6}>
                             <img src={banner} alt="home-banner" className="rounded border border-warning border-5 img-fluid" />
                         </Col>
 
-                        <Col className="mt-3">
+                        <Col sm={1} md={6} className="mt-3">
                             <p className="text-center text-info">Who We Are</p>
                             <h3 className="text-warning text-center">Yumma Chef Recipe</h3>
                             <p className="text-center">
@@ -30,4 +31,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default BannerHome;
