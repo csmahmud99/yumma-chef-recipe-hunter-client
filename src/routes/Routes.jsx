@@ -15,12 +15,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch("http://localhost:5000/chef-recipe")
+                loader: () => fetch("https://yumma-chef-recipe-hunter-server-csmahmud99.vercel.app/chef-recipe")
             },
             {
                 path: "recipe/:id",
                 element: <PrivateRoutes><Recipe /></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/chef-recipe/${params.id}`)
+                loader: ({params}) => fetch(`https://yumma-chef-recipe-hunter-server-csmahmud99.vercel.app/chef-recipe/${params.id}`)
             },
             {
                 path: "blog",
