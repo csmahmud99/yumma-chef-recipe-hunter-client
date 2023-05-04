@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import { Button, Container, Form, Stack } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { AuthContext } from '../../../../providers/AuthProvider';
+import { AuthContext } from '../../../providers/AuthProvider';
+
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log("Login Page Location:", location);
@@ -24,6 +25,28 @@ const Login = () => {
                 const loggedInUser = userCredential.user;
                 console.log(loggedInUser);
                 navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log(error.message);
+            });
+    };
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+            })
+            .catch(error => {
+                console.log(error.message);
+            });
+    };
+
+    const handleGithubSignIn = () => {
+        signInWithGithub()
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
             })
             .catch(error => {
                 console.log(error.message);
@@ -53,10 +76,10 @@ const Login = () => {
 
                         <div>
                             <Stack direction="horizontal" gap={3}>
-                                <Button className="mb-3" variant="primary" type="submit">
+                                <Button onClick={handleGoogleSignIn} className="mb-3" variant="primary" type="submit">
                                     <FaGoogle className="fs-4 text-warning" /> <br /> Google Login
                                 </Button>
-                                <Button className="mb-3 ms-auto" variant="primary" type="submit">
+                                <Button onClick={handleGithubSignIn} className="mb-3 ms-auto" variant="primary" type="submit">
                                     <FaGithub className="fs-4 text-warning" /> <br /> Github Login
                                 </Button>
                             </Stack>

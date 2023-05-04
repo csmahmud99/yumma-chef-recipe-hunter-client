@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { Button, Container, Form, Stack } from 'react-bootstrap';
+import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../../providers/AuthProvider';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
