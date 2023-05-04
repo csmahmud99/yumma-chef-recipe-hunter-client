@@ -6,7 +6,17 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+        .then( () => {
+            console.log("User is Successfully Logged Out");
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+    };
 
     return (
         <div>
@@ -27,7 +37,7 @@ const Header = () => {
                                 {user && <FaUserCircle className="fs-2" />}
                                 {
                                     user ?
-                                        <Button variant="dark">Logout</Button>
+                                        <Button onClick={handleLogout} variant="dark">Logout</Button>
                                         : <Link to="/login"><Button variant="dark">Login</Button></Link>
                                 }
                             </Stack>

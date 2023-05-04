@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form, Stack } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { AuthContext } from '../../../../providers/AuthProvider';
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(userCredential => {
+                const loggedInUser = userCredential.user;
+                console.log(loggedInUser);
+                navigate("/");
+            })
+            .catch(error => {
+                console.log(error.message);
+            });
+    };
+
     return (
         <div className="bg-dark py-5">
             <Container>
                 <h2 className="text-warning text-center">Login to Your Account</h2>
                 <hr className="text-info" />
                 <div>
-                    <Form className="bg-black text-warning p-4 w-25 mx-auto mt-5 rounded border border-white border-5">
+                    <Form onSubmit={handleLogin} className="bg-black text-warning p-4 w-25 mx-auto mt-5 rounded border border-white border-5">
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" name="email" placeholder="Enter Your Email Address" required />
