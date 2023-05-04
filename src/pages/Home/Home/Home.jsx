@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
 import ChefInfo from '../ChefInfo/ChefInfo';
 import Counter from '../Counter/Counter';
+import HomeTab from '../HomeTab/HomeTab';
 
 const Home = () => {
     const chefInformation = useLoaderData();
@@ -33,6 +34,10 @@ const Home = () => {
 
             <div className="bg-black p-5">
                 <Counter />
+            </div>
+
+            <div className="bg-warning p-5">
+                <HomeTab />
             </div>
         </div >
     );
