@@ -20,7 +20,7 @@ const RecipeCard = ({ recipeSingle }) => {
     return (
         <Col sm={1} md={4}>
             <CardGroup>
-                <Card className="bg-dark">
+                <Card className="bg-dark" style={{ minHeight: "400px" }}>
                     <Card.Body>
                         <div>
                             <Card.Title className="text-warning text-center">{recipeName}</Card.Title>

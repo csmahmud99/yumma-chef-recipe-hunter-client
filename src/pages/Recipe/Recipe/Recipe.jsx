@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Container, Row, Col } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Card, Container, Row, Col, Button } from 'react-bootstrap';
+import { Link, useLoaderData } from 'react-router-dom';
 import CountUp from 'react-countup';
 import RecipeCard from '../RecipeCard/RecipeCard';
 
@@ -91,6 +91,12 @@ const Recipe = () => {
                                 />)
                             }
                         </Row>
+                    </div>
+
+                    <div className="text-center mt-5">
+                        <Link to="/">
+                            <Button className="fw-semibold fs-4" variant="dark">Back to Home Page</Button>
+                        </Link>
                     </div>
                 </Container>
             </div>
