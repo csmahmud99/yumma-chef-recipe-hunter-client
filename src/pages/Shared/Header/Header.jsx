@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Container, Nav, Navbar, Stack } from 'react-bootstrap';
+import { Button, Container, Nav, NavLink, Navbar, Stack } from 'react-bootstrap';
 import logo from "../../../assets/yumma_logo.png"
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
@@ -10,12 +10,12 @@ const Header = () => {
 
     const handleLogout = () => {
         logOut()
-        .then( () => {
-            console.log("User is Successfully Logged Out");
-        })
-        .catch(error => {
-            console.log(error.message);
-        });
+            .then(() => {
+                console.log("User is Successfully Logged Out");
+            })
+            .catch(error => {
+                console.log(error.message);
+            });
     };
 
     return (
@@ -28,9 +28,12 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto mt-3">
-                            <Link to="/" className="me-3"><Button variant="link" className="text-decoration-none text-dark fw-semibold">Home</Button></Link>
-
-                            <Link to="/blog"><Button variant="link" className="text-decoration-none text-dark fw-semibold">Blog</Button></Link>
+                            <NavLink to="/" as={Link} className="active">
+                                Home
+                            </NavLink>
+                            <NavLink to="/blog" as={Link} className="active">
+                                Blog
+                            </NavLink>
                         </Nav>
                         <Nav className="mt-3">
                             <Stack direction="horizontal" gap={3}>
