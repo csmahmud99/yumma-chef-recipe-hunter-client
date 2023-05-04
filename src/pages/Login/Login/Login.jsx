@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form, Stack } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
@@ -11,6 +11,7 @@ const Login = () => {
     const location = useLocation();
     console.log("Login Page Location:", location);
     const from = location.state?.from?.pathname || "/";
+    const [error, setError] = useState();
 
     const handleLogin = event => {
         event.preventDefault();
@@ -28,6 +29,7 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error.message);
+                setError(error.message);
             });
     };
 
@@ -39,6 +41,7 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error.message);
+                setError(error.message);
             });
     };
 
@@ -50,6 +53,7 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error.message);
+                setError(error.message);
             });
     };
 
@@ -69,6 +73,10 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" name="password" placeholder="Enter Your Password" required />
                         </Form.Group>
+
+                        <p className="text-danger">
+                            {error}
+                        </p>
 
                         <Button className="mb-3" variant="primary" type="submit">
                             Login
