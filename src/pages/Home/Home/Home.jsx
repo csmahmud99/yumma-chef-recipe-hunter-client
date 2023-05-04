@@ -15,9 +15,10 @@ const Home = () => {
 
             {/* Home Chef Information Section */}
             <div className="bg-warning py-5">
-                <h2 className="text-center">Visit Our Honorable Chefs</h2>
-                <hr />
                 <Container>
+                    <h2 className="text-center">Visit Our Honorable Chefs</h2>
+                    <hr />
+
                     <Row>
                         {
                             chefInformation?.map(information => <ChefInfo
@@ -28,7 +29,7 @@ const Home = () => {
                     </Row>
                 </Container>
             </div>
-        </div>
+        </div >
     );
 };
 
