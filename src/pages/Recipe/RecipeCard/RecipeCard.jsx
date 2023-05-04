@@ -29,7 +29,7 @@ const RecipeCard = ({ recipeSingle }) => {
                         <hr className="text-info" />
 
                         <div>
-                            <Card.Text className="text-white"><strong className="text-info">Ingredients:</strong>
+                            <div className="text-white"><strong className="text-info">Ingredients:</strong>
                                 <ul>
                                     {
                                         ingredients?.map(list => <li className="text-capitalize" key={list}>
@@ -37,7 +37,7 @@ const RecipeCard = ({ recipeSingle }) => {
                                         </li>)
                                     }
                                 </ul>
-                            </Card.Text>
+                            </div>
 
                             <Card.Text className="text-white"><strong className="text-info">Cooking Method:</strong> {cookingMethod}</Card.Text>
                         </div>

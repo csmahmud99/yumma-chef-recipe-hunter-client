@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import { Button, Container, Form, Stack } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../../../providers/AuthProvider';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log("Login Page Location:", location);
+    const from = location.state?.from?.pathname || "/";
 
     const handleLogin = event => {
         event.preventDefault();
@@ -20,7 +23,7 @@ const Login = () => {
             .then(userCredential => {
                 const loggedInUser = userCredential.user;
                 console.log(loggedInUser);
-                navigate("/");
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error.message);
