@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button, Card, CardGroup, Col, Stack } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar, FaBookmark } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeCard = ({ recipeSingle }) => {
     console.log(recipeSingle);
@@ -11,6 +13,7 @@ const RecipeCard = ({ recipeSingle }) => {
     const [disabled, setDisabled] = useState(false);
 
     const handleBookmark = () => {
+        toast("Wow!!! The Recipe is Your Favorite");
         setDisabled(true);
     };
 
@@ -57,6 +60,7 @@ const RecipeCard = ({ recipeSingle }) => {
                                 <Button onClick={handleBookmark} disabled={disabled} variant="warning">
                                     <FaBookmark className="text-white" />
                                 </Button>
+                                <ToastContainer />
                             </div>
                         </Stack>
                     </Card.Footer>
