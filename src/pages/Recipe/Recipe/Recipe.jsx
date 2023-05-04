@@ -3,6 +3,7 @@ import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import CountUp from 'react-countup';
 import RecipeCard from '../RecipeCard/RecipeCard';
+import LazyLoad from 'react-lazy-load';
 
 const Recipe = () => {
     const recipe = useLoaderData();
@@ -23,7 +24,9 @@ const Recipe = () => {
             <div className="text-center py-5 bg-dark">
                 <Container>
                     <div>
-                        <img className="rounded-circle border border-warning border-4" src={chefPictureUrl} alt="chef-image" />
+                        <LazyLoad>
+                            <img className="rounded-circle border border-warning border-4" src={chefPictureUrl} alt="chef-image" />
+                        </LazyLoad>
                     </div>
 
                     <div className="my-3">
