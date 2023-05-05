@@ -3,6 +3,7 @@ import { Button, Container, Nav, NavLink, Navbar, Stack } from 'react-bootstrap'
 import logo from "../../../assets/yumma_logo.png"
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import ActiveLink from './ActiveLink/ActiveLink';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -27,18 +28,14 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto mt-3 fw-bolder fs-3">
-                            <NavLink to="/" as={Link}>
-                                Home
-                            </NavLink>
-                            <NavLink to="/blog" as={Link}>
-                                Blog
-                            </NavLink>
+                        <Nav className="me-auto mt-3 fw-bolder fs-3 text-decoration-none">
+                            <li className='my-3 me-3'><ActiveLink to="/">Home</ActiveLink></li>
+                            <li className='my-3'><ActiveLink to="/blog">Blogs</ActiveLink></li>
                         </Nav>
                         <Nav className="mt-3 ">
                             <Stack direction="horizontal" gap={3}>
                                 <div className="w-50">
-                                    {user && <img title={user?.displayName} className="rounded-circle" style={{width: "50px"}} src={user?.photoURL} alt="user-image" />}
+                                    {user && <img title={user?.displayName} className="rounded-circle" style={{ width: "50px" }} src={user?.photoURL} alt="user-image" />}
                                 </div>
 
                                 <div>
@@ -54,7 +51,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+        </div >
     );
 };
 
