@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, NavLink, Navbar, Stack } from 'react-bootstrap';
-import logo from "../../../assets/yumma_logo.png"
+import logo from "../../../../assets/yumma_logo.png"
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../providers/AuthProvider';
-import ActiveLink from './ActiveLink/ActiveLink';
-
+import { AuthContext } from '../../../../providers/AuthProvider';
+import ActiveLink from '../ActiveLink/ActiveLink';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     // console.log(user);
