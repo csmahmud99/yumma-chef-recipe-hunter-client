@@ -13,7 +13,7 @@ const ChefInfo = ({ information }) => {
 
     return (
         <Col md={4}>
-            <Card className="text-center bg-dark gap-4 m-3">
+            <Card className="text-center bg-dark gap-4 m-3 rounded border border-white border-5">
                 <LazyLoad>
                     <Card.Img variant="top" src={chefPictureUrl} />
                 </LazyLoad>
@@ -22,7 +22,7 @@ const ChefInfo = ({ information }) => {
                     <Card.Text className="text-info fs-6"><strong>{yearsOfExperience} Years of Experiences</strong></Card.Text>
                     <Card.Text className="text-white"><FaRegNewspaper /> <strong>Number of Recipes: {numRecipes}</strong></Card.Text>
                     <Card.Text className="text-white"><FaRegThumbsUp /> <strong>People Likes: {numLikes}</strong></Card.Text>
-                    <Button onClick={() => navigate(`recipe/${chefId}`)} variant="warning">View Recipes</Button>
+                    <Button className="border border-white border-2" onClick={() => navigate(`recipe/${chefId}`)} variant="warning">View Recipes</Button>
                 </Card.Body>
             </Card>
         </Col>

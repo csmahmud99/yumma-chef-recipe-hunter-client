@@ -3,10 +3,10 @@ import { Button, Container, Nav, NavLink, Navbar, Stack } from 'react-bootstrap'
 import logo from "../../../assets/yumma_logo.png"
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
 
     const handleLogout = () => {
         logOut()
@@ -22,7 +22,7 @@ const Header = () => {
         <div>
             <Navbar className="pb-4" collapseOnSelect expand="lg" bg="warning" variant="light">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/">
                         <img src={logo} alt="site-logo" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -37,7 +37,7 @@ const Header = () => {
                         </Nav>
                         <Nav className="mt-3">
                             <Stack direction="horizontal" gap={3}>
-                                {user && <FaUserCircle className="fs-2" />}
+                                {user && <img className="rounded-circle w-25" src={user?.photoURL} />}
                                 {
                                     user ?
                                         <Button onClick={handleLogout} variant="dark">Logout</Button>

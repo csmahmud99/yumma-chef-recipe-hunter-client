@@ -7,7 +7,7 @@ const Counter = () => {
         <div>
             <Row>
                 <Col className="mb-2" sm={1} md={4}>
-                    <Card className="text-center rounded-circle bg-warning p-5">
+                    <Card className="text-center rounded-circle bg-warning p-5 border border-white border-5">
                         <Card.Body>
                             <Card.Title className="fs-1 fw-bolder">
                                 <CountUp end={5000} />+
@@ -18,8 +18,9 @@ const Counter = () => {
                         </Card.Body>
                     </Card>
                 </Col>
+
                 <Col className="mb-2" sm={1} md={4}>
-                    <Card className="text-center rounded-circle bg-warning p-5">
+                    <Card className="text-center rounded-circle bg-warning p-5 border border-white border-5">
                         <Card.Body>
                             <Card.Title className="fs-1 fw-bolder">
                                 <CountUp end={200} />+ 
@@ -30,8 +31,9 @@ const Counter = () => {
                         </Card.Body>
                     </Card>
                 </Col>
+
                 <Col className="mb-2" sm={1} md={4}>
-                    <Card className="text-center rounded-circle bg-warning p-5">
+                    <Card className="text-center rounded-circle bg-warning p-5 border border-white border-5">
                         <Card.Body>
                             <Card.Title className="fs-1 fw-bolder">
                                 <CountUp end={20} />

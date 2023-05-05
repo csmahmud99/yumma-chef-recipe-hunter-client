@@ -10,7 +10,7 @@ const Blog = () => {
                 <div>
                     <Row>
                         <Col className="mb-3" sm={1} md={6}>
-                            <Card style={{minHeight: "400px"}} className="bg-warning text-white" border="warning">
+                            <Card style={{ minHeight: "400px" }} className="bg-warning text-white" border="warning">
                                 <Card.Header>Tell us the differences between uncontrolled and controlled components.</Card.Header>
                                 <Card.Body>
                                     <Card.Title className="text-dark">The differences between uncontrolled and controlled components:</Card.Title>
@@ -25,7 +25,7 @@ const Blog = () => {
                         </Col>
 
                         <Col className="mb-3" sm={1} md={6}>
-                            <Card style={{minHeight: "400px"}} className="bg-warning text-white" border="warning">
+                            <Card style={{ minHeight: "400px" }} className="bg-warning text-white" border="warning">
                                 <Card.Header>How to validate React props using PropTypes</Card.Header>
                                 <Card.Body>
                                     <Card.Title className="text-dark">Validation of React props using PropTypes:</Card.Title>
@@ -39,7 +39,7 @@ const Blog = () => {
 
                     <Row>
                         <Col className="mb-3" sm={1} md={6}>
-                            <Card style={{minHeight: "400px"}} className="bg-warning text-white" border="warning">
+                            <Card style={{ minHeight: "400px" }} className="bg-warning text-white" border="warning">
                                 <Card.Header>Tell us the difference between nodejs and express js.</Card.Header>
                                 <Card.Body>
                                     <Card.Title className="text-dark">The difference between nodejs and express js:</Card.Title>
@@ -57,7 +57,7 @@ const Blog = () => {
                         </Col>
 
                         <Col className="mb-3" sm={1} md={6}>
-                            <Card style={{minHeight: "400px"}} className="bg-warning text-white" border="warning">
+                            <Card style={{ minHeight: "400px" }} className="bg-warning text-white" border="warning">
                                 <Card.Header>What is a custom hook, and why will you create a custom hook?</Card.Header>
                                 <Card.Body>
                                     <Card.Title className="text-dark">Custom Hook & Way of Creating a Custom Hook:</Card.Title>
@@ -73,7 +73,7 @@ const Blog = () => {
                     </Row>
                 </div>
             </Container>
-        </div>
+        </div >
     );
 };
 
