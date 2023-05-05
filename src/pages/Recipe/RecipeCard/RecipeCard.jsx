@@ -10,6 +10,7 @@ const RecipeCard = ({ recipeSingle }) => {
 
     const { recipeName, ingredients, cookingMethod, rating } = recipeSingle;
 
+    // Bookmark Button & one-click disable functionality
     const [disabled, setDisabled] = useState(false);
 
     const handleBookmark = () => {
@@ -46,6 +47,7 @@ const RecipeCard = ({ recipeSingle }) => {
                     <Card.Footer>
                         <Stack direction="horizontal">
                             <div>
+                                {/* 'react-rating' package*/}
                                 <small className="text-white">
                                     <Rating
                                         placeholderRating={rating}

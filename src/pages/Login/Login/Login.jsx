@@ -14,6 +14,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
     const [error, setError] = useState();
 
+    // Login with Email Password Button Function
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -34,6 +35,7 @@ const Login = () => {
             });
     };
 
+    // Google Sign In Button Function
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
@@ -47,6 +49,7 @@ const Login = () => {
             });
     };
 
+    // Github Sign In Button Function
     const handleGithubSignIn = () => {
         signInWithGithub()
             .then(result => {
