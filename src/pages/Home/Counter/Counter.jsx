@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 const Counter = () => {
     return (
         <div>
+            {/* This Counter is done by 'react-countup' package */}
             <Row>
                 <Col className="mb-2" sm={1} md={4}>
                     <Card className="text-center rounded-circle bg-warning p-5 border border-white border-5">

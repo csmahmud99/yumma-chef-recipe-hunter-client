@@ -7,10 +7,14 @@ const HomeTab = () => {
         <div>
             <Container>
                 <Row>
+                    {/* Home Food Category Description Section : Left : Image */}
                     <Col sm={1} md={6} className="rounded">
                         <img src={leftBanner} alt="leftImage" className="img-fluid border border-white border-5 rounded" style={{ maxHeight: "50rem" }} />
                     </Col>
+
+                    {/* Home Food Category Description Section : Right : 4 Tabs */}
                     <Col sm={1} md={6} className="bg-dark rounded p-3 text-white border border-white border-5">
+                        {/* This Tab System is implemented by 'React-Bootstrap' */}
                         <Tabs
                             defaultActiveKey="home"
                             id="justify-tab-example"

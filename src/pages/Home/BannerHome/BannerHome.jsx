@@ -9,10 +9,12 @@ const BannerHome = () => {
             <div className="bg-dark text-white py-5">
                 <Container>
                     <Row>
+                        {/* Home Banner Section : Left Side : Image */}
                         <Col sm={1} md={6}>
                             <img src={banner} alt="home-banner" className="rounded border border-warning border-5 img-fluid" />
                         </Col>
 
+                        {/* Home Banner Section : Right Side : Home Short About */}
                         <Col sm={1} md={6} className="mt-3">
                             <p className="text-center text-info">Who We Are</p>
                             <h3 className="text-warning text-center">Yumma Chef Recipe</h3>
