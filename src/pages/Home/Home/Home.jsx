@@ -1,3 +1,4 @@
+// ****** Importing necessary components and from dependencies ******
 import React from 'react';
 import BannerHome from '../BannerHome/BannerHome';
 import { useLoaderData } from 'react-router-dom';
@@ -7,6 +8,7 @@ import Counter from '../Counter/Counter';
 import HomeTab from '../HomeTab/HomeTab';
 
 const Home = () => {
+    // Fetched from server and this data is coming from 'Home.jsx' File
     const chefInformation = useLoaderData();
     // console.log(chefInformation);
 
@@ -21,6 +23,7 @@ const Home = () => {
                     <h2 className="text-center">Visit Our Honorable Chefs</h2>
                     <hr />
 
+                    {/* Home Chef Information related 6 cards are coming from 'ChefInfo.jsx' File */}
                     <Row>
                         {
                             chefInformation?.map(information => <ChefInfo
@@ -32,10 +35,12 @@ const Home = () => {
                 </Container>
             </div>
 
+            {/* Home Extra 01 : Overall Counter Card Section */}
             <div className="bg-black p-5">
                 <Counter />
             </div>
 
+            {/* Home Extra 02 : Food Item Category Description Section  */}
             <div className="bg-warning p-5">
                 <HomeTab />
             </div>
