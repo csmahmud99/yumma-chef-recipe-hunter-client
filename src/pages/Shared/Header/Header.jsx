@@ -3,6 +3,8 @@ import { Button, Container, Nav, NavLink, Navbar, Stack } from 'react-bootstrap'
 import logo from "../../../assets/yumma_logo.png"
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -17,6 +19,12 @@ const Header = () => {
                 console.log(error.message);
             });
     };
+
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            {user?.displayName}
+        </Tooltip>
+    );
 
     return (
         <div>
@@ -37,7 +45,14 @@ const Header = () => {
                         </Nav>
                         <Nav className="mt-3">
                             <Stack direction="horizontal" gap={3}>
-                                {user && <img className="rounded-circle w-25" src={user?.photoURL} />}
+                                <OverlayTrigger
+                                    placement="right"
+                                    delay={{ show: 250, hide: 400 }}
+                                    overlay={renderTooltip}
+                                >
+                                    {user && <img className="rounded-circle w-25" src={user?.photoURL} alt="user-image" />}
+                                </OverlayTrigger>
+
                                 {
                                     user ?
                                         <Button onClick={handleLogout} variant="dark">Logout</Button>
