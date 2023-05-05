@@ -10,7 +10,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log("Login Page Location:", location);
+    // console.log("Login Page Location:", location);
     const from = location.state?.from?.pathname || "/";
     const [error, setError] = useState();
 
@@ -20,12 +20,12 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password);
+        // console.log(email, password);
 
         signIn(email, password)
             .then(userCredential => {
                 const loggedInUser = userCredential.user;
-                console.log(loggedInUser);
+                // console.log(loggedInUser);
                 navigate(from, { replace: true });
             })
             .catch(error => {
@@ -38,7 +38,7 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 const loggedInUser = result.user;
-                console.log(loggedInUser);
+                // console.log(loggedInUser);
                 navigate(from, { replace: true });
             })
             .catch(error => {
@@ -51,7 +51,7 @@ const Login = () => {
         signInWithGithub()
             .then(result => {
                 const loggedInUser = result.user;
-                console.log(loggedInUser);
+                // console.log(loggedInUser);
                 navigate(from, { replace: true });
             })
             .catch(error => {

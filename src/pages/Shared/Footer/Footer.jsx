@@ -21,13 +21,13 @@ const Footer = () => {
                 </div>
 
                 <div className="text-center text-white p-5">
-                    <p className="bg-dark p-1 rounded border border-warning border-5">
-                        <div className="bg-dark p-5 rounded border border-warning border-5">
+                    <div className="bg-dark pt-3 px-3 pb-1 rounded border border-warning border-5">
+                        <p className="bg-dark p-5 rounded border border-warning border-5">
                             <span>
                                 Copyright &copy; 2023 | <strong>Yumma Chef Recipe Hunter</strong> by <a href="https://github.com/csmahmud99" target="_blank" style={{ color: "#FFC107" }} className="fw-semibold text-decoration-none">CS Mahmud</a> | All Rights Reserved.
                             </span>
-                        </div>
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </Container>
         </div>

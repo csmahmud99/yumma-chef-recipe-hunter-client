@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeCard = ({ recipeSingle }) => {
-    console.log(recipeSingle);
+    // console.log(recipeSingle);
 
     const { recipeName, ingredients, cookingMethod, rating } = recipeSingle;
 
